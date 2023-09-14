@@ -24,35 +24,32 @@ class BankApplicationTests {
 	AccountRepository accountRepository;
 	
 	
-//	@Test
-//	@DisplayName("repository Test")
-//	void repositoryTest() {
-//		System.out.println(userRepository.findAll());
-//		System.out.println("----");
-//		System.out.println(accountRepository.findAll());
-//	}
-	
 	@Test
-	@DisplayName("jsonParsing Test")
-	void jsonParse() {
-		User user = User.builder()
-	            .phone_number("11")
-	            .age(1)
-	            .isIsAgree(false)
-	            .account(Account.builder()
-	                    .email("aa@a.a")
-	                    .userId("abc")
-	                    .build())
-	            .build();
-		
-		ObjectMapper objectMapper = new ObjectMapper();
-        try {
-            String json = objectMapper.writeValueAsString(user);
-            System.out.println(json);
-        } catch (JsonProcessingException e) {
-            e.printStackTrace();
-        }
+	@DisplayName("repository Test")
+	void repositoryTest() {
 	}
+	
+//	@Test
+//	@DisplayName("jsonParsing Test")
+//	void jsonParse() {
+//		User user = User.builder()
+//	            .phone_number("11")
+//	            .age(1)
+//	            .isIsAgree(false)
+//	            .account(Account.builder()
+//	                    .email("aa@a.a")
+//	                    .userId("abc")
+//	                    .build())
+//	            .build();
+//		
+//		ObjectMapper objectMapper = new ObjectMapper();
+//        try {
+//            String json = objectMapper.writeValueAsString(user);
+//            System.out.println(json);
+//        } catch (JsonProcessingException e) {
+//            e.printStackTrace();
+//        }
+//	}
 
 }
 
