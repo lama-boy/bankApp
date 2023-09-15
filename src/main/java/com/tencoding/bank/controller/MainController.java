@@ -12,6 +12,7 @@ public class MainController {
 		// prefix : /WEB-INF/view/
 		// sufix  : .jsp
 		return "layout/main";
+		
 	}
 
 	// 주소 설계
@@ -22,6 +23,10 @@ public class MainController {
 		// prefix : /WEB-INF/view/
 		// sufix  : .jsp
 		return "layout/main";
+	}
+	@GetMapping("admin-page")
+	public String adminPage(){
+		return "admin/adminPage";
 	}
 
 }
