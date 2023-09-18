@@ -29,6 +29,7 @@ public class UserController {
 	// name 속성을 이용해서
 	// key=value
 	// Object Mapper
+	
 	@PostMapping("/sign-up")
 	public String signUpProc(SignUpFormDto signUpFormDto) {
 		System.out.println(signUpFormDto);
