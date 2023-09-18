@@ -33,6 +33,7 @@
 		<button type="submit" class="btn btn-primary">이체</button>
 	</div>
 </div>
+</div>
 
 
 <!--< %@ include file="/WEB-INF/view/layout/footer.jsp"%>-->
