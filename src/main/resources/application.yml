@@ -21,6 +21,7 @@ spring:
       - classpath:db/table.sql
       data-locations:
       - classpath:db/data.sql
+      encoding: utf-8
       
   h2:
     console:

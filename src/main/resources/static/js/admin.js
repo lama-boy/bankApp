@@ -1,20 +1,24 @@
 $(document).ready(function() {
+    // nav 자리에 ajax 해서 아래 코드들이 실행되야함.
     const ele = new Ele($('#body_body'), 'nav');
     ele.rootCssSet();
-    rootInner('nav')
-    
-
-
-
-
-
-
+    rootInner('nav');
     
 });
 
+function getRootMenus(){
+    $.get('', function (data) {
+        let list = ['샘플데이터1','샘플데이터2','샘플데이터3','샘플데이터4'];
+        
+    })
+}
+
+function getSubMenus(){
+
+}
 
 function rootInner(eleId){
-    const rootBox = new Ele($('#' + eleId),$('<div id = "' + eleId + '_header"'));
+    const rootBox = new Ele($('#' + eleId),$('<div id = "' + eleId + '_header">'));
 
     rootBox.appendDiv(eleId + '_header');
     $('#' + eleId + '_header').css('display','flex');
@@ -36,7 +40,7 @@ class Ele {
     }
 
     appendDiv(divId){
-        this.childTagId.append($('<div id="'+ divId +'">'));
+        $('#' + this.childTagId).append($('<div id="'+ divId +'">'));
     }
 
     defaultCss(width, height, display) {
