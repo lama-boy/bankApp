@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.tencoding.bank.repository.interfaces.MenuRepository"> 
+
+	<insert id="save">
+		insert into menu_tb(menuname,parent_menu)
+		values(#{menuname},#{parentMenu})
+	</insert>	
+	
+	<update id="updateById">
+		update menu_tb set menuname = #{menuname} where id = #{id}
+	</update>
+	
+	<delete id="deleteById">
+		delete from menu_tb where id = #{id}
+	</delete>
+	
+	<select id="findAllMenuNames" resultType="com.tencoding.bank.repository.model.Menu">
+		select menuname from account_tb
+	</select>
+	
+	
+</mapper>

@@ -11,7 +11,7 @@ spring:
       prefix: /WEB-INF/view/
       suffix: .jsp
   datasource:
-    url: jdbc:h2:mem:testdb;MODE=MySQL
+    url: jdbc:mysql://localhost:3306/bank?serverTimezone=Asia/seoul
     driver-class-name: org.h2.Driver
     username: sa
     password:

@@ -8,11 +8,10 @@ $(document).ready(function () {
   let nav_left = new Tab($("#body_Top"), "nav_left");
   nav_left.appendTag("");
   nav_left.tagCss("10%", "100%", "", "flex");
-
-  // 230919 함수화시켜라
+  
+  // 반복적이지 않으니까 수정하지마... 
   let nav_menu = new Tab($("#nav_left"), "nav_menu");
   let nav_tag = new Tab($("#nav_left"), "nav_tag");
-
   nav_menu.appendTag("navs");
   nav_tag.appendTag("navs");
   nav_menu.tagCss("50%", "100%", "red", "block");
@@ -33,6 +32,7 @@ $(document).ready(function () {
   $("#nav_right").html("+");
   $("#nav_right").on("click", () => newWindow("/saveRoot/"));
 });
+
 
 function newWindow(link) {
   var newWindow = window.open("pop-up-page", "_blank", "width=400,height=300");

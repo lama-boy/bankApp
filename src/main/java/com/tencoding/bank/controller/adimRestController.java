@@ -3,12 +3,25 @@ package com.tencoding.bank.controller;
 import java.util.ArrayList;
 import java.util.List;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.tencoding.bank.repository.interfaces.MenuRepository;
+import com.tencoding.bank.repository.model.Menu;
+import com.tencoding.bank.service.MenuService;
+
 @RestController
 public class adimRestController {
+
+    @Autowired
+    MenuService menuService;
+
+    @Autowired
+    MenuRepository menuRepository;
+
+
     @GetMapping("/test")
     public String data(){
         return "";
@@ -61,11 +74,11 @@ public class adimRestController {
         //     tag.setTagName(eleName);
         //     tagManagerRepository.save(tag);
         // }else{
-        //     System.out.println("menu실행됨");
-        //     Menu menu = new Menu();
-        //     menu.setMenuName(eleName);
-        //     menu.setParentMenu(0);
-        //     menuRepository.save(menu);
+        System.out.println("menu실행됨");
+        Menu menu = new Menu();
+        menu.setMenuName(eleName);
+        menu.setParentMenu(0);
+        menuRepository.saveMenu(menu);
         // }
     }
 
