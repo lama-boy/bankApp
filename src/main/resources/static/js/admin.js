@@ -9,6 +9,7 @@ $(document).ready(function () {
   nav_left.appendTag("");
   nav_left.tagCss("10%", "100%", "", "flex");
 
+  // 230919 함수화시켜라
   let nav_menu = new Tab($("#nav_left"), "nav_menu");
   let nav_tag = new Tab($("#nav_left"), "nav_tag");
 

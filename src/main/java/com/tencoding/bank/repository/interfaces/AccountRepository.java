@@ -9,6 +9,7 @@ import com.tencoding.bank.repository.model.Account;
 @Mapper // 반드시 정의 
 public interface AccountRepository {
 	
+	
 	public int insert(Account account);
 	public int updateById(Account account);
 	public int deleteById(Integer id);
