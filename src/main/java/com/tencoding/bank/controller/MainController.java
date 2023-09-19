@@ -2,6 +2,7 @@ package com.tencoding.bank.controller;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
 
 @Controller
 public class MainController {
@@ -24,6 +25,10 @@ public class MainController {
 		// sufix  : .jsp
 		return "layout/main";
 	}
+
+
+
+
 	@GetMapping("admin-page")
 	public String adminPage(){
 		return "admin/adminPage";

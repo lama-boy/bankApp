@@ -14,7 +14,7 @@ public class Account {
 	private String number;
 	private String password;
 	private Long balance;
-	private Integer userid;
+	private Integer userId;
 	private Timestamp createdAt;
 
 	// 출금 기능

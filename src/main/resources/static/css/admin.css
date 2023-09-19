@@ -7,9 +7,22 @@ body{
     border: 1px solid black;
 }
 
+#body_header{
+    display:block;
+    height : 10%;
+    width : 100%;
+}
+
 #body_body{
+    display:block;
     height : 80%;
     width : 100%;
     border : 1px solid green;
     border-collapse: collapse;
+}
+
+#body_footer{
+    display:block;
+    height : 10%;
+    width : 100%;
 }
