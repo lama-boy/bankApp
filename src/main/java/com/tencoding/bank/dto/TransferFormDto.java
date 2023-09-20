@@ -3,9 +3,9 @@ package com.tencoding.bank.dto;
 import lombok.Data;
 
 @Data
-public class TransferFromDto {
+public class TransferFormDto {
 	
-	private long amount;
+	private Long amount;
 	private String wAccountNumber;
 	private String dAccountNumber;
 	private String wAccountPassword;

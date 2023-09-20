@@ -13,7 +13,7 @@ import com.tencoding.bank.repository.model.Menu;
 import com.tencoding.bank.service.MenuService;
 
 @RestController
-public class adimRestController {
+public class AdimRestController {
 
     @Autowired
     MenuService menuService;
@@ -27,34 +27,46 @@ public class adimRestController {
         return "";
     }
 
-    //adminpage
-    @GetMapping("/loadRootMenus")
-    public List<Object> loadRootMenus(){
-        List<Object> list = new ArrayList<Object>();
-        return list;
-    }
-    @GetMapping("/loadRootTags")
-    public List<Object> loadRootTags(){
-        List<Object> list = new ArrayList<Object>();
-        return list;
-    }
-    
-    @GetMapping("/loadMenus")
-    public List<Object> loadMenus(){
-        List<Object> list = new ArrayList<Object>();
+    @GetMapping("/loadTagDetails/service")
+    public List<String> loadServiceTags(){
+        List<String> list = new ArrayList<>();
+        for(int i = 0; i < 15; i ++){
+            list.add("" + i);
+        }
         return list;
     }
 
-    @GetMapping("/loadTags/{parentTag}")
-    public List<Object> loadTags(@PathVariable String parentTag){
-        List<Object> list = new ArrayList<Object>();
+    @GetMapping("/loadTagDetails/facilities")
+    public List<String> loadFacilitiesTags(){
+        List<String> list = new ArrayList<>();
+        for(int i = 0; i < 15; i ++){
+            list.add("" + i);
+        }
         return list;
     }
 
-    @GetMapping("/pop-up-page")
-    public String popUpPage(){
-        return "html/popUpPage.html";
+    /*
+    @GetMapping("/loadUserDetails")
+    public List<User> loadUserDetails(){
+        List list = ;
+        return list;
     }
+    @GetMapping("/loadCompanyDetails")
+    public List<Company> loadCompanyDetails(){
+        List list = ;
+        return list;
+    }
+    @GetMapping("/loadNoticeDetails")
+    public List<Board> loadNoticeDetails(){
+        List list = ;
+        return list;
+    }
+    @GetMapping("/loadCSDetails")
+    public List<Board> loadCSDetails(){
+        List list = ;
+        return list;
+    }
+    */
 
 
     // 데이터를 받을 때 type - data 로 받아야된다.

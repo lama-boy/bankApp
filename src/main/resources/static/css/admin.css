@@ -1,28 +1,47 @@
 body{
-    display : block;
+    background-color: white;
     width : 800px;
-    height : 1000px;
-    background-color: antiquewhite;
+    height: 1000px;
     margin : auto;
-    border: 1px solid black;
+    border : 1px solid black;
 }
 
-#body_header{
-    display:block;
-    height : 10%;
+#header{
+    background-color: aqua;
     width : 100%;
+    height : 20%;
+    display: block;
 }
 
-#body_body{
-    display:block;
+#body{
+    background-color: antiquewhite;
+    width : 100%;
     height : 80%;
-    width : 100%;
-    border : 1px solid green;
-    border-collapse: collapse;
+    display: block;
 }
 
-#body_footer{
-    display:block;
-    height : 10%;
-    width : 100%;
+#bodyHeader{
+    height : 7%;
+    justify-content: space-between;
+}
+
+#bodyHeaderNav{
+    display : flex;
+    height : 100%;
+    width  : 90%;
+}
+
+
+.navEles{
+    display : block;
+    font-size : 16px;
+    font-family : Arial, sans-serif;
+    font-weight : bold;
+    color : white;
+    cursor : pointer;
+    margin : 7px;
+}
+
+.detailsBoxes--{
+    border-collapse: collapse;
 }

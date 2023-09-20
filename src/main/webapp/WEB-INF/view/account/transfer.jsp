@@ -8,7 +8,7 @@
 	<h2>이체 페이지(인증)</h2>
 	<h5>어서오세요. 환영합니다.</h5>
 	<div class="bg-light p-md-5 h-75">
-		<form action="">
+		<form action="/account/transfer" method="post">
 			<div class="form-group">
 				<label for="amount">이체 금액:</label>
 				<input type="text" id="amount" class="form-control"
@@ -29,8 +29,8 @@
 				<input type="password" id="wAccountPassword" class="form-control"
 				placeholder="출금계좌비밀번호" name="wAccountPassword">
 			</div>
-		</form>
 		<button type="submit" class="btn btn-primary">이체</button>
+		</form>
 	</div>
 </div>
 </div>
