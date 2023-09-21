@@ -35,7 +35,7 @@
                     <td>${history.sender}</td>
                     <td>${history.receiver}</td>
                     <td>${history.amount}</td>
-                    <td>${history.balance}</td>
+                    <td>${history.formatBalance()}</td>
                    </tr> 
                 </c:forEach>
 

@@ -1,5 +1,6 @@
 package com.tencoding.bank.dto;
 import java.sql.Timestamp;
+import java.text.DecimalFormat;
 
 import com.tencoding.bank.utils.TimestampUtil;
 
@@ -19,4 +20,8 @@ public class HistoryDto {
         return TimestampUtil.timestampToString(createdAt);
     }
     // 금액 , 처리
+    public String formatBalance(){
+        DecimalFormat df = new DecimalFormat("#,###");
+        return df.format(balance);
+    }
 }

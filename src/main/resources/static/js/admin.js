@@ -1,3 +1,8 @@
+/*
+* commonClass.js 에 class Ele 와 Checker.
+* TODO paging class commonClass.js 에 만들기
+*/
+
 $(document).ready(function () {
   let arr = ["Tags", "User", "Company", "Notice", "CS"];
   make_body_nav(arr);
@@ -9,8 +14,8 @@ $(document).ready(function () {
  ** 가져온 table 을 통해 column 을 생성하거나 칼럼명수정, 저장 할 수 있다.
  */
 function make_body_nav(list) {
-  //body 에 bodyHeader( nav ) 붙이기
-  //$('#tagName')
+  // body 에 bodyHeader( nav ) 붙이기
+  // $('#tagName')
   const body_nav = new Ele($('#body'), "bodyHeader");
   body_nav.appendTag("navbar navbar-expand-sm bg-dark navbar-dark");
   $("#bodyHeader").append($('<div id = "bodyHeaderNav">'));
@@ -60,40 +65,29 @@ function newWindow(link) {
  ele + DetailOuterWrapper 로 표시했다.
  */
 function tagClicked(navTag) {
-  if (!anyOfClickedBool($(".navEles"))) {
-    console.log("실행됨 87");
+  let checker = new Checker(navTag,$('.navEles'));
+  
+  if (!checker.anyOfClickedBool($(".navEles"))) {
+    console.log("실행됨 66");
     attatchDetailOuterWrapper(navTag);
     return;
   }
-  if (checkSelfClicked($(".navEles"), navTag)) {
-    console.log("실행됨 92");
+  if (checker.checkSelfClicked($(".navEles"), navTag)) {
+    console.log("실행됨 71");
     detatch($(".DetailOuterWrapper--"));
     console.log(navTag);
     $("#" + navTag).attr("data-clicked", "false");
     return;
   }
-  if (
-    !checkSelfClicked($(".navEles"), navTag) &&
-    anyOfClickedBool($(".navEles"))
+  if (!checker.checkSelfClicked($(".navEles"), navTag) &&
+    checker.anyOfClickedBool($(".navEles"))
   ) {
     detatch($(".DetailOuterWrapper--"));
     $(".navEles").each((idx, e) => e.setAttribute("data-clicked", "false"));
     attatchDetailOuterWrapper(navTag);
     return;
   }
-}
-
-// data-clicked 가 true 인 요소가 tag와 일치하면 true 반환
-// 재클릭 여부를 알려준다고 보면 됨.
-function checkSelfClicked(list, tag) {
-  let a;
-  list.each((idx, e) => {
-    if (e.getAttribute("data-clicked") == "true") {
-      console.log(e);
-      a = e;
-    }
-  });
-  return a.id == tag;
+  
 }
 
 // tagId + DetailOuterWrapper 창을 생성.
@@ -106,20 +100,6 @@ function attatchDetailOuterWrapper(tagId) {
   loadNavDetails(tagId);
 }
 
-// navEles 들 중 체크된 요소가 있는 지 확인.
-function anyOfClickedBool(list) {
-  for (let i = 0; i < list.length; i++) {
-    if (list[i].getAttribute("data-clicked") == "true") {
-      return true;
-    }
-  }
-  return false;
-}
-
-// 클릭시 태그의 data-clicked 가 true 면 return true
-function clickBool(ele) {
-  return ele.attr("data-clicked") == "true";
-}
 
 // ele 를 제거하는 함수.
 // 여기서는 DetailOuterWrapper 을 떼어내는 데에만 쓰인다.
@@ -177,6 +157,18 @@ function display(tagName) {
     let detailHeader = new Ele($('#' + tagName + "Details"), tagName + "DetailHeader");
     detailHeader.appendTag("detailHeader");
     detailHeader.tagCss('100%','10%','white','flex');
+    $('#' + tagName + "DetailHeader").css('justify-content', 'space-between');
+    let detailHeaderName = new Ele($('#' + tagName + 'DetailHeader'),tagName + 'detailHeaderName');
+    detailHeaderName.appendTag("detailHeaderName");
+    detailHeaderName.tagCss('20%','100%','white','block');
+    detailHeaderName.makeHtml(tagName);
+    let addButton = new Ele($('#' + tagName + 'DetailHeader'),tagName + 'AddButton');
+    addButton.appendTag('addButtons');
+    addButton.tagCss('10%','100%','white','inline-block');
+    addButton.makeHtml('+');
+    $('#' + tagName + 'AddButton').on('click', e => console.log(e.target) );
+    
+
     // header flex, header left : tagName html / header right : buttons div + - column 수정
     data.forEach((e, idx) =>{
       let detailBody = new Ele($('#' + tagName + "Details"), tagName + "DetailBody" + idx);
