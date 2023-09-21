@@ -10,7 +10,8 @@ $(document).ready(function () {
  */
 function make_body_nav(list) {
   //body 에 bodyHeader( nav ) 붙이기
-  const body_nav = new Ele($("#body"), "bodyHeader");
+  //$('#tagName')
+  const body_nav = new Ele($('#body'), "bodyHeader");
   body_nav.appendTag("navbar navbar-expand-sm bg-dark navbar-dark");
   $("#bodyHeader").append($('<div id = "bodyHeaderNav">'));
 
@@ -21,41 +22,6 @@ function make_body_nav(list) {
     indicateClicked($("#" + e));
     $("#" + e).on("click", (e) => tagClicked(e.target.id));
   });
-}
-
-// ele 를 append 하는 class
-class Ele {
-  constructor(parentTag, tagName) {
-    this.parentTag = parentTag;
-    this.tagName = tagName;
-  }
-
-  // className 을 공란으로하면 append만 실행된다.
-  // id 는 tagName 을 사용한다.
-  // className 은 naming convention 에 의해 -- 를 붙이고 사용한다.
-  appendTag(className) {
-    if (className != "") {
-      this.parentTag.append(
-        $('<div class = "' + className + '--" id = "' + this.tagName + '">')
-      );
-    } else {
-      this.parentTag.append($('<div id = "' + this.tagName + '">'));
-    }
-  }
-
-  // css 를 간편하게
-  tagCss(width, height, color, display) {
-    $("#" + this.tagName).css("width", width);
-    $("#" + this.tagName).css("height", height);
-    $("#" + this.tagName).css("background-color", color);
-    $("#" + this.tagName).css("display", display);
-  }
-
-  // tagName 에 html을.
-  makeHtml(html) {
-    console.log(this.tagName);
-    $("#" + this.tagName).html(html);
-  }
 }
 
 // nav 메뉴들의 클릭 유무를 표시한다.
@@ -244,4 +210,3 @@ function loadNoticeDetails() {
 function loadCSDetails() {
   $.get("/loadCSDetails", function (data) {});
 }
-
